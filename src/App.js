@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/navigation/Header/Header';
+import JobsList from './components/Job/JobsList';
+import Form from './components/Form/Form';
+import Collapse from './components/navigation/Collapse/Collapse'
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App" >
+
+                <Header />
+
+                <div className="container pt-3">
+                <Collapse textButton="Criar Regra" collapseId="jobForm">
+                    <Form/>
+                </Collapse>
+                    <JobsList />
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
