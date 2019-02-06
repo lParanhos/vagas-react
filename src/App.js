@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/navigation/Header/Header';
-import JobsList from './components/Job/JobsList';
+import JobsList from './components/JobManagement/JobManagement';
 import Form from './components/Form/Form';
 import Collapse from './components/navigation/Collapse/Collapse'
 class App extends Component {
@@ -12,9 +12,7 @@ class App extends Component {
                 <Header />
 
                 <div className="container pt-3">
-                <Collapse textButton="Criar Regra" collapseId="jobForm">
-                    <Form/>
-                </Collapse>
+                
                     <JobsList />
                 </div>
             </div>
