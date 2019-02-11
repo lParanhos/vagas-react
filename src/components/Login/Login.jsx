@@ -13,9 +13,9 @@ export default class Login extends React.Component {
                 {/* <pre>{this.state.email}</pre>
                 <pre>{this.state.password}</pre>
  */}
-                <div className="card" style={{ width: '35rem', margin: '0 auto' }}>
+                <div className="card" style={{ maxWidth: '35rem', margin: '0 auto' }}>
                     <div className="card-body">
-                        <h5 className="card-title"><img
+                        <h5 className="card-title"><img style={{width: '100%'}}
                             src={require('./../../assets/logo-vagas.png')} />
                         </h5>
                         <h6 className="card-subtitle mb-2 text-muted">Insira seu email e senha para entrar no sistema</h6>

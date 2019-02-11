@@ -11,7 +11,17 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 
 
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'https://afternoon-ocean-29603.herokuapp.com'
+
+
+window.getAxiosConfig = () => {
+    return {
+      headers: {
+        'Authorization': 'Bearer ' + JSON.parse(window.localStorage.getItem('token'))
+      }
+    }
+  }
+  
 
 ReactDOM.render(
     <BrowserRouter>
@@ -21,4 +31,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();

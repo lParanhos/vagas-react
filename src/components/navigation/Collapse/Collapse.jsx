@@ -7,7 +7,7 @@ const Collapse = (props) => (
             <a className="btn btn-primary" href={"#" + props.collapseId} data-toggle="collapse"  
                 aria-expanded="false"
                 >
-                {props.textButton}
+                {props.buttonText}
             </a>
             <div className="collapse mb-3" id={props.collapseId}>
                 {props.children}

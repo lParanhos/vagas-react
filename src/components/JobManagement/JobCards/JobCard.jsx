@@ -23,29 +23,35 @@ const JobCard = (props) => {
             img = Des;
             break;
     }
-
-    return (
-        <div className="col-sm-12 col-md-6 col-lg-4 pt-5">
-            <div className="card">
-                <img className="card-img-top" src={img} alt="Card image cap" />
-                <div className="card-body">
-                    <h4 className="card-title">{props.name}</h4>
-                    <strong>Descrição:</strong>
-                    <p className="card-text">
-                        {props.description}
-                    </p>
-                    <br />
-                    <strong>Salário Base</strong>
-                    <br />
-                    <p>
-                        R${props.salary}
-                    </p>
-                    <button className="btn btn-warning" onClick={props.editHandler}><i className="fas fa-edit"></i></button>
-                    <button className="btn btn-danger" onClick={props.removeHandler}><i className="fas fa-trash-alt"></i></button>
+    let button = <div></div>
+    if (navigator.onLine) {
+        button = (
+            <div>
+                <button className="btn btn-warning" onClick={props.editHandler}><i className="fas fa-edit"></i></button>
+                <button className="btn btn-danger" onClick={props.removeHandler}><i className="fas fa-trash-alt"></i></button>
+            </div>
+        )}
+        return (
+            <div className="col-sm-12 col-md-6 col-lg-4 pt-5">
+                <div className="card">
+                    <img className="card-img-top" src={img} alt="Card image cap" />
+                    <div className="card-body">
+                        <h4 className="card-title">{props.name}</h4>
+                        <strong>Descrição:</strong>
+                        <p className="card-text">
+                            {props.description}
+                        </p>
+                        <br />
+                        <strong>Salário Base</strong>
+                        <br />
+                        <p>
+                            R${props.salary}
+                        </p>
+                        {button}
+                    </div>
                 </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
-export default JobCard;
+    export default JobCard;

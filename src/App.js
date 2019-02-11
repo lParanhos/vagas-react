@@ -11,7 +11,7 @@ import Login from './components/Login/Login';
 class App extends Component {
 
     state = {
-        loggedUser: JSON.parse(window.localStorage.getItem('user')) || null
+        loggedUser: JSON.parse(window.localStorage.getItem('user')) || null, loading: true
     }
 
     loginHandler = (paramEmail, paramPass) => {
@@ -20,7 +20,7 @@ class App extends Component {
                 window.localStorage.setItem('user', JSON.stringify(response.data.user));
                 window.localStorage.setItem('token', JSON.stringify(response.data.token));
 
-                this.setState({ loggedUser: response.data.user })
+                this.setState({ loggedUser: response.data.user, loading: false })
             })
             .catch(error => {
                 alert('Login inválido');
@@ -34,6 +34,7 @@ class App extends Component {
     }
 
     render() {
+        
         if (this.state.loggedUser) {
             return (
                 <div className="App" >
